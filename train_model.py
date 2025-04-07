@@ -1,4 +1,3 @@
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
@@ -42,7 +41,7 @@ model = Sequential([
     Dense(8, activation='relu'),
     Dense(1)
 ])
-model.compile(optimizer='adam', loss='mse', metrics=['mae'])
+model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
 
 # Train model
 history = model.fit(X_train, y_train, validation_split=0.2, epochs=100)
